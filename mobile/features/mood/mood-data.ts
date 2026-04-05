@@ -3,6 +3,7 @@ export type MoodOption = {
   label: string;
   emoji: string;
   description: string;
+  id?: string;
 };
 
 export const moodCollections: Record<"preWatch" | "postWatch", MoodOption[]> = {

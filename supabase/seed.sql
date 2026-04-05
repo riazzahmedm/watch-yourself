@@ -39,3 +39,76 @@ values
   ('emotional-risk-tolerance', 'Emotional Risk Tolerance', 'How open the user is to challenging, draining, or destabilizing watches.'),
   ('mood-recovery-pattern', 'Mood Recovery Pattern', 'Whether the user tends to recover through warmth, laughter, intensity, or reflection.')
 on conflict (slug) do nothing;
+
+insert into public.titles (
+  tmdb_id,
+  tmdb_type,
+  name,
+  original_name,
+  overview,
+  release_date,
+  original_language,
+  runtime_minutes,
+  status,
+  popularity,
+  vote_average,
+  metadata_json
+)
+values
+  (
+    666277,
+    'movie',
+    'Past Lives',
+    'Past Lives',
+    'Two deeply connected childhood friends reunite years later and confront what changed and what never did.',
+    '2023-06-02',
+    'en',
+    106,
+    'Released',
+    45.0,
+    7.7,
+    '{}'::jsonb
+  ),
+  (
+    965150,
+    'movie',
+    'Aftersun',
+    'Aftersun',
+    'A daughter revisits the quiet emotional textures of a holiday she once shared with her father.',
+    '2022-10-21',
+    'en',
+    101,
+    'Released',
+    39.0,
+    7.7,
+    '{}'::jsonb
+  ),
+  (
+    76,
+    'movie',
+    'Before Sunrise',
+    'Before Sunrise',
+    'Two strangers meet on a train and spend one night walking, talking, and falling into each other''s world.',
+    '1995-01-27',
+    'en',
+    101,
+    'Released',
+    28.0,
+    7.9,
+    '{}'::jsonb
+  ),
+  (
+    238,
+    'movie',
+    'The Godfather',
+    'The Godfather',
+    'The aging patriarch of a crime dynasty transfers power to his reluctant son.',
+    '1972-03-14',
+    'en',
+    175,
+    'Released',
+    78.0,
+    8.7,
+    '{}'::jsonb
+  )
+on conflict (tmdb_id, tmdb_type) do nothing;
