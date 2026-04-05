@@ -1,4 +1,3 @@
-import { Stack } from "expo-router";
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 
 const traits = [
@@ -22,7 +21,6 @@ const traits = [
 export default function DnaScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
-      <Stack.Screen options={{ headerShown: true, title: "Taste DNA" }} />
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.hero}>
           <Text style={styles.title}>Your taste is more than genre.</Text>

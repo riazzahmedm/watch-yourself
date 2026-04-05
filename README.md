@@ -149,6 +149,7 @@ The first version should prove 3 things:
 3. Taste DNA + Movie Twin gives users a reason to return and share
 
 Read the docs in [`docs/`](/Users/riazahmed/Documents/MVP/watch-yourself/docs) for the MVP scope, finalized architecture, data model, and recommendation design.
+The product and engineering module map is in [docs/module-map.md](/Users/riazahmed/Documents/MVP/watch-yourself/docs/module-map.md).
 
 The emotion system is further defined in [docs/mood-intelligence.md](/Users/riazahmed/Documents/MVP/watch-yourself/docs/mood-intelligence.md).
 The backend scaffold and setup instructions are in [docs/backend-setup.md](/Users/riazahmed/Documents/MVP/watch-yourself/docs/backend-setup.md).
