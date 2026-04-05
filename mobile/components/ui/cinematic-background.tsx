@@ -60,6 +60,25 @@ const noiseDots = Array.from({ length: 140 }, (_, index) => ({
   opacity: 0.04 + (index % 6) * 0.02,
 }));
 
+const grainPixels = Array.from({ length: 420 }, (_, index) => ({
+  key: `grain-${index}`,
+  top: `${(index * 7) % 100}%` as const,
+  left: `${(index * 19) % 100}%` as const,
+  width: index % 5 === 0 ? 2 : 1,
+  height: index % 7 === 0 ? 2 : 1,
+  opacity: 0.028 + (index % 9) * 0.008,
+}));
+
+const grainStreaks = Array.from({ length: 180 }, (_, index) => ({
+  key: `streak-${index}`,
+  top: `${(index * 13) % 100}%` as const,
+  left: `${(index * 29) % 100}%` as const,
+  width: index % 2 === 0 ? 12 : 8,
+  height: 1,
+  opacity: 0.018 + (index % 5) * 0.01,
+  rotate: index % 3 === 0 ? "14deg" : index % 3 === 1 ? "-12deg" : "0deg",
+}));
+
 export function CinematicBackground({
   children,
   variant = "auth",
@@ -262,11 +281,42 @@ export function CinematicBackground({
           {
             opacity: pulse.interpolate({
               inputRange: [0, 1],
-              outputRange: [0.16, 0.24],
+              outputRange: [0.2, 0.32],
             }),
           },
         ]}
       >
+        {grainPixels.map((pixel) => (
+          <View
+            key={pixel.key}
+            style={[
+              styles.pixel,
+              {
+                top: pixel.top,
+                left: pixel.left,
+                width: pixel.width,
+                height: pixel.height,
+                opacity: pixel.opacity,
+              },
+            ]}
+          />
+        ))}
+        {grainStreaks.map((streak) => (
+          <View
+            key={streak.key}
+            style={[
+              styles.streak,
+              {
+                top: streak.top,
+                left: streak.left,
+                width: streak.width,
+                height: streak.height,
+                opacity: streak.opacity,
+                transform: [{ rotate: streak.rotate }],
+              },
+            ]}
+          />
+        ))}
         {noiseDots.map((dot) => (
           <View
             key={dot.key}
@@ -303,6 +353,14 @@ const styles = StyleSheet.create({
   dot: {
     position: "absolute",
     borderRadius: 999,
+    backgroundColor: "#ffffff",
+  },
+  pixel: {
+    position: "absolute",
+    backgroundColor: "#ffffff",
+  },
+  streak: {
+    position: "absolute",
     backgroundColor: "#ffffff",
   },
 });
