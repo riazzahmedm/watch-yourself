@@ -152,3 +152,4 @@ Read the docs in [`docs/`](/Users/riazahmed/Documents/MVP/watch-yourself/docs) f
 
 The emotion system is further defined in [docs/mood-intelligence.md](/Users/riazahmed/Documents/MVP/watch-yourself/docs/mood-intelligence.md).
 The backend scaffold and setup instructions are in [docs/backend-setup.md](/Users/riazahmed/Documents/MVP/watch-yourself/docs/backend-setup.md).
+The mobile app scaffold lives in [mobile/](/Users/riazahmed/Documents/MVP/watch-yourself/mobile) with setup notes in [mobile/docs/mobile-setup.md](/Users/riazahmed/Documents/MVP/watch-yourself/mobile/docs/mobile-setup.md).
